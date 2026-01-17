@@ -22,7 +22,7 @@ It’s an agent that **acts inside your real dev environment**.
 
 ### What it does
 - **🔐 Privacy-First & BYOK**  
-  Full sovereignty over your intelligence. Use **OpenAI, Anthropic, OpenRouter**, or run **fully local models** via **Ollama / LM Studio**.
+  Full sovereignty over your intelligence. Use **OpenRouter**, or run **fully local models** via **Ollama / LM Studio**.
 
 - **🛠️ Agentic Tool System**  
   55+ tools that let the AI *act* — file ops, terminal execution, debugging loops — not just suggest fixes.
