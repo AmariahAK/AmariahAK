@@ -11,30 +11,49 @@ I build tools where **human intuition and machine intelligence meet** — withou
 
 ## 🌌 Flagship Project: Atlarix  
 **A Privacy-First, Native AI Coding Agent**  
-*v1.0 — Live.*
+*v2.1 — Public Beta.*
 
 Atlarix is my current mission: a desktop-native AI copilot built to give developers **agentic power without cloud lock-in or privacy trade-offs**.
 
-This isn’t a chat box that suggests code.  
-It’s an agent that **acts inside your real dev environment**.
+This isn't a chat box that suggests code.  
+It's an agent that **acts inside your real dev environment**.
 
 👉 https://www.atlarix.dev/
 
-### What it does
+### What's New in v2.1
+- **🤖 3-Tier Agent System**  
+  Research → Architect → Builder → Reviewer agents work together with delegated tool access and activity transparency.
+
+- **📋 Project Understanding**  
+  Dedicated instruction files (`.atlarix/ATLARIX.md`, `AI_RULES.md`) that persist project-specific context and rules.
+
+- **⚡ Agent Modes**  
+  Direct (no agents), Guided (flat delegation; default), Autonomous (agents spawn sub-agents) — choose your complexity level.
+
+- **🔍 Activity Stream**  
+  Real-time view of agent decisions, tool usage, model selection, and delegation — no more black box AI.
+
+### Core Features
 - **🔐 Privacy-First & BYOK**  
-  Full sovereignty over your intelligence. Use **OpenRouter**, or run **fully local models** via **Ollama / LM Studio**.
+  Full sovereignty over your intelligence. Use **OpenAI, Anthropic, Gemini, Groq, xAI**, or run **fully local models** via **Ollama / LM Studio**.
 
 - **🛠️ Agentic Tool System**  
-  55+ tools that let the AI *act* — file ops, terminal execution, debugging loops — not just suggest fixes.
+  57+ tools that let the AI *act* — file ops, terminal execution, debugging loops, web search — not just suggest fixes.
 
 - **🚀 Live Dev Previews**  
   Spins up real dev servers (Vite, Next.js, Python, Go) and lets the agent see, reason about, and debug the running app.
 
-- **📊 AI Diagram System**  
-  Generates and maintains interactive architecture diagrams by analyzing the actual codebase — not guesses.
+- **📊 Blueprint Architecture System**  
+  Visual architecture design with rooms (services) and functions (APIs, webhooks, logic) — generates code from blueprints.
 
 - **🎯 Surgical Code Editing**  
-  Targeted edits (`replace_code`, `insert_code`) that respect existing style and minimize unnecessary diffs.
+  Targeted edits (`str_replace`, file operations) that respect existing style and minimize unnecessary diffs.
+
+- **🔄 Permission System**  
+  Review and approve AI changes before execution — you stay in control.
+
+### Coming in v2.2: Blueprint Intelligence
+The blueprint becomes **persistent memory** — AI remembers your architecture across sessions instead of re-scanning your codebase every time. Progressive extraction, framework pattern detection, and blueprint-driven planning.
 
 > **Note:** I prioritize the engine over the showroom.  
 > Weekly progress and raw build logs live on [LinkedIn](https://linkedin.com/in/amariah-kamau-3156412a6/).
