@@ -9,54 +9,78 @@ I build tools where **human intuition and machine intelligence meet** — withou
 
 ---
 
-## 🌌 Flagship Project: Atlarix  
+## 🌌 Flagship Project: Atlarix
 **A Privacy-First, Native AI Coding Agent**  
-*v2.1 — Public Beta.*
+*v3.0 — Live*
 
 Atlarix is my current mission: a desktop-native AI copilot built to give developers **agentic power without cloud lock-in or privacy trade-offs**.
 
 This isn't a chat box that suggests code.  
-It's an agent that **acts inside your real dev environment**.
+It's an agent that **understands your entire system architecture** and builds inside your real dev environment.
 
 👉 https://www.atlarix.dev/
 
-### What's New in v2.1
-- **🤖 3-Tier Agent System**  
-  Research → Architect → Builder → Reviewer agents work together with delegated tool access and activity transparency.
+### What's New in v3.0
+- **🗂 Workspace Storage Overhaul**  
+  Paths resolve correctly, workspaces are stable, `.atlarix/` folder ships with every project.
 
-- **📋 Project Understanding**  
-  Dedicated instruction files (`.atlarix/ATLARIX.md`, `AI_RULES.md`) that persist project-specific context and rules.
+- **🧠 Persistent Project Memory**  
+  `memory.md` + `spec.md` inside `.atlarix/` — the AI remembers your decisions, rules, and architecture across every session. No more re-explaining your project.
 
-- **⚡ Agent Modes**  
-  Direct (no agents), Guided (flat delegation; default), Autonomous (agents spawn sub-agents) — choose your complexity level.
+- **🔗 Fully Visible Flow Connections**  
+  Blueprint canvas connections render cleanly across all node types.
 
-- **🔍 Activity Stream**  
-  Real-time view of agent decisions, tool usage, model selection, and delegation — no more black box AI.
+- **📡 Telemetry Foundation**  
+  OpenTelemetry + SQLite groundwork laid for the upcoming PIVOT (ANTLR4 full parsing + persistent graph).
 
-### Core Features
-- **🔐 Privacy-First & BYOK**  
-  Full sovereignty over your intelligence. Use **OpenAI, Anthropic, Gemini, Groq, xAI**, or run **fully local models** via **Ollama / LM Studio**.
+### Core Architecture: RTE + RAG
+```
+Traditional AI coding:
+  Ask question → scan codebase → 100K tokens → slow, expensive
 
-- **🛠️ Agentic Tool System**  
-  57+ tools that let the AI *act* — file ops, terminal execution, debugging loops, web search — not just suggest fixes.
+Atlarix v3.0:
+  Parse once → Blueprint graph cached → query relevant nodes → ~5K tokens
+  File watcher → incremental updates only
+```
+**Parse Once. Query Forever.**
 
-- **🚀 Live Dev Previews**  
-  Spins up real dev servers (Vite, Next.js, Python, Go) and lets the agent see, reason about, and debug the running app.
+### Feature Highlights
+- **🗺 Blueprint Canvas** — React Flow visual architecture designer. Design containers, beacons, edges. Generate `ATLARIX_PLAN.md`. AI implements task by task with review gates.
+- **🤖 3-Tier Agent System** — Research → Architect → Builder → Reviewer. Direct / Guided / Autonomous modes. Ask (read-only) vs Build (write + execute) permissions — independent of mode.
+- **🔐 Privacy-First & BYOK** — OpenAI, Anthropic, Gemini, Groq, xAI, Mistral, Together AI, AWS Bedrock, Ollama, LM Studio. Your keys, your data.
+- **🛠 57 Intelligent Tools** — File ops, terminal execution, web search, semantic code search, architecture diagrams, scaffolding.
+- **🔄 Permission Layer** — AI proposes every change. You approve before anything runs.
+- **🚀 Live Dev Previews** — Vite, Next.js, CRA, Nuxt, Astro. Auto-starts dev server, renders in-app.
+- **💰 Token Budget System** — Per-provider caps, real-time color-coded bar, warnings at 80% and 90%.
 
-- **📊 Blueprint Architecture System**  
-  Visual architecture design with rooms (services) and functions (APIs, webhooks, logic) — generates code from blueprints.
+### Currently Competing
+🏆 Entered in 3 hackathons simultaneously:
+- **Amazon Nova AI Hackathon** — $40,000 prize pool
+- **DeveloperWeek 2026 Hackathon** — $23,000 prize pool  
+- **Elasticsearch Agent Builder Hackathon** — $20,000 prize pool
 
-- **🎯 Surgical Code Editing**  
-  Targeted edits (`str_replace`, file operations) that respect existing style and minimize unnecessary diffs.
+---
 
-- **🔄 Permission System**  
-  Review and approve AI changes before execution — you stay in control.
+## 🔭 Atlarix Roadmap
 
-### Coming in v2.2: Blueprint Intelligence
-The blueprint becomes **persistent memory** — AI remembers your architecture across sessions instead of re-scanning your codebase every time. Progressive extraction, framework pattern detection, and blueprint-driven planning.
+### v3.x — PIVOT (In Progress)
+Full ANTLR4 parsing across TypeScript, Python, Java, Go, Rust, C/C++. SQLite persistence for the Blueprint graph. AI clustering into containers. Live vs Blueprint comparison. Generate code from architecture.
 
-> **Note:** I prioritize the engine over the showroom.  
-> Weekly progress and raw build logs live on [LinkedIn](https://linkedin.com/in/amariah-kamau-3156412a6/).
+### v4.0 — Atlarix Workforce (Planned)
+Taking Atlarix beyond the individual developer into **team and automation workflows**:
+
+- **Slack Integration** — AI agent accessible directly from your team's Slack. Ask questions about your codebase, trigger builds, get PR summaries without leaving the channel.
+- **GitHub Actions Integration** — Atlarix agents as CI/CD steps. Auto-review PRs against the Blueprint, flag architectural drift, suggest fixes before merge.
+- **Database Intelligence** — Connect to live databases (Supabase, PostgreSQL, MySQL). AI understands your schema, queries, and data relationships as part of the Blueprint graph.
+- **Supabase Native Integration** — Auth, storage, realtime, and edge functions understood natively. Blueprint includes your Supabase schema as first-class nodes.
+- **Multi-Repo Workspace** — One Blueprint across your entire org's repos. Frontend, backend, mobile, infra — unified architecture view.
+- **Team Memory** — Shared `.atlarix/memory.md` synced across team members via Git. Everyone's AI has the same project context.
+
+### Beyond v4.0
+- Voice input
+- Timeline export
+- Workspace templates
+- Enterprise SSO + audit logs
 
 ---
 
