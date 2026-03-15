@@ -17,7 +17,7 @@ getting in the way.
 
 ## 🌌 Flagship Project: Atlarix
 **A Privacy-First, Native AI Coding Copilot**
-*v3.7 — Live & Apple Notarized ✅*
+*v3.9 — Live & Apple Notarized ✅*
 
 Atlarix is my current mission: a desktop-native 
 AI copilot built to give developers agentic 
@@ -30,31 +30,40 @@ real dev environment — visually.
 
 👉 https://atlarix.dev
 
-### What's New in v3.7
-- **✅ Apple Notarized + Code-Signed**
-  Mac users can install without any 
-  security warnings. Fully verified.
+### What's New in v3.9
+- **❓ AI Clarifying Questions**
+  All models can now ask up to 4 targeted 
+  questions before proceeding on complex or 
+  ambiguous tasks. Answered once per chat — 
+  never repetitive.
 
-- **📡 Sentry Error Monitoring**
-  Always-on error tracking across 
-  the full application.
+- **↩ Conversation Revert + Message Edit**
+  Edit any previous message and re-prompt 
+  from that point. Conversation truncates 
+  cleanly. File revert ships in v4.0.
 
-- **📊 PostHog Analytics**
-  Optional, consent-based. Toggle 
-  in Settings at any time.
+- **📡 Stream Tools**
+  `stream_terminal_output` and 
+  `stream_pipeline_logs` — AI watches live 
+  data for exactly what it needs instead of 
+  reading full output dumps. Significant 
+  token reduction on noisy output.
 
-- **🔀 Two-Stage Auto Router**
-  Complexity-based routing across 
-  Fast / Medium / Thinking model tiers.
+- **⚙️ GitHub Actions Panel**
+  View workflow runs, stream live logs, 
+  and send output to AI — without leaving 
+  Atlarix. Lives in the left panel (Pro).
 
-- **🔷 Blueprint Enricher**
-  ContentHash cache with batched 
-  processing for faster Blueprint updates.
+- **↔️ Resizable Panels + Shortcuts**
+  Drag to resize left panel. Cmd/Ctrl+I 
+  and Cmd/Ctrl+O to toggle panels at 30% 
+  width. Width persisted across sessions.
 
-- **🗄 DB Extension**
-  Full CRUD for PostgreSQL, MySQL, 
-  and SQLite. AI tools: db_query, 
-  db_schema, db_list, db_mutate.
+- **💬 Chat Tab When Panels Cover Screen**
+  When both panels are open and the chat 
+  area is hidden, a full Chat tab appears 
+  in the right panel — same session, 
+  same tools, compact model search.
 
 ### Core Architecture: RTE + RAG
 ```
@@ -62,7 +71,7 @@ Traditional AI coding:
   Ask question → scan codebase → 
   100K tokens → slow, expensive, resets
 
-Atlarix v3.7:
+Atlarix v3.9:
   Parse once → Blueprint graph cached → 
   query relevant nodes → ~5K tokens
   File watcher → incremental updates only
@@ -88,10 +97,10 @@ Atlarix v3.7:
   Ollama, LM Studio. Your keys, your data, 
   your machine.
 
-- **🛠 57 Intelligent Tools** — File ops, 
+- **🛠 59 Intelligent Tools** — File ops, 
   terminal execution, web search, semantic 
   code search, architecture diagrams, 
-  DB queries, scaffolding.
+  DB queries, stream tools, scaffolding.
 
 - **🔄 Permission Queue** — AI proposes 
   every change. You approve before 
@@ -105,11 +114,42 @@ Atlarix v3.7:
   caps, real-time color-coded bar, 
   warnings at 80% and 90%.
 
+- **🗄 DB Extension (Pro)** — Full CRUD 
+  for PostgreSQL, MySQL, and SQLite. 
+  AI tools: db_query, db_schema, 
+  db_list, db_mutate.
+
+- **⚙️ GitHub Actions (Pro)** — Pipeline 
+  runs, job logs, live streaming, 
+  Send to AI. No tab switching.
+
 ### Currently Competing 🏆
-Entered in 3 hackathons simultaneously:
+Entered in 1 hackathons simultaneously:
 - **Amazon Nova AI Hackathon** — $40,000 pool
-- **DeveloperWeek 2026 Hackathon** — $23,000 pool
-- **Elasticsearch Agent Builder** — $20,000 pool
+
+---
+
+## 🌍 The African AI Initiative
+
+Atlarix is built in Nairobi. The next chapter 
+is building *for* African developers.
+
+Most AI coding tools assume a $20/month 
+subscription to a Western provider. That's 
+not the reality for most developers on this 
+continent. Atlarix is open-model by design — 
+you bring any AI, including locally-built ones.
+
+We're actively integrating African-built models 
+as first-class providers:
+- **Awarri** (Nigeria) — N-ATLAS multilingual LLM
+- **Lelapa AI** (South Africa) — InkubaLM 
+  in Swahili, Hausa, isiZulu, isiXhosa, Yoruba
+- **LLM Labs Kenya** — LLMs for the Kenyan context
+
+The goal: a developer in Nairobi opens Atlarix, 
+picks a locally-built model, and ships software. 
+No Western subscription required.
 
 ---
 
@@ -130,6 +170,8 @@ into team and automation workflows:
   directly from your team's Slack
 - **GitHub Actions Integration** — Atlarix 
   agents as CI/CD steps
+- **File Revert** — Restore codebase to 
+  pre-exchange state on conversation revert
 - **Supabase Native Integration** — Auth, 
   storage, realtime, edge functions as 
   first-class Blueprint nodes
