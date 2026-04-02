@@ -16,77 +16,83 @@ getting in the way.
 ---
 
 ## 🌌 Flagship Project: Atlarix
+
 **A Privacy-First, Native AI Coding Copilot**
-*v3.9 — Live & Apple Notarized ✅*
+
+*v6.0 — Live & Apple Notarized ✅ | Linux Stable*
 
 Atlarix is my current mission: a desktop-native 
 AI copilot built to give developers agentic 
 power without cloud lock-in or privacy trade-offs.
 
 This isn't a chat box that suggests code.
+
 It's a copilot that **understands your entire 
 system architecture** and builds inside your 
 real dev environment — visually.
 
 👉 https://atlarix.dev
 
-### What's New in v3.9
-- **❓ AI Clarifying Questions**
-  All models can now ask up to 4 targeted 
-  questions before proceeding on complex or 
-  ambiguous tasks. Answered once per chat — 
-  never repetitive.
+### What's New in v6.0
 
-- **↩ Conversation Revert + Message Edit**
-  Edit any previous message and re-prompt 
-  from that point. Conversation truncates 
-  cleanly. File revert ships in v4.0.
+- **🔄 Workforce Session Scope**  
+  Slack, Jira, GitHub, etc. now ask **per chat** which workspace/channel you want.  
+  Start a **New Chat** → context resets. No leftover permissions from old conversations.  
+  Removed confusing “base of origin” settings – just tell the AI once per session.
 
-- **📡 Stream Tools**
-  `stream_terminal_output` and 
-  `stream_pipeline_logs` — AI watches live 
-  data for exactly what it needs instead of 
-  reading full output dumps. Significant 
-  token reduction on noisy output.
+- **🤖 Autonomous Mode (Fewer clicks)**  
+  Specialist agents (Architect, Builder, Debugger) run tools **without per‑tool approval dialogs**.  
+  You still confirm Workforce scope when needed. After a run, you get a **summary of changes** before committing.  
+  Ask/Plan/Build restrictions still apply – safety first.
 
-- **⚙️ GitHub Actions Panel**
-  View workflow runs, stream live logs, 
-  and send output to AI — without leaving 
-  Atlarix. Lives in the left panel (Pro).
+- **🧠 Two-Stage Auto Router + Delegation Hints**  
+  Low‑confidence? Atlarix uses a fast model to classify your intent.  
+  Activity stream may suggest a specialist (e.g., “Delegate to Architect”).  
+  Better model selection = faster answers, lower token waste.
 
-- **↔️ Resizable Panels + Shortcuts**
-  Drag to resize left panel. Cmd/Ctrl+I 
-  and Cmd/Ctrl+O to toggle panels at 30% 
-  width. Width persisted across sessions.
+- **💬 Chat & UX Hardening**  
+  **Ask vs Plan** behavior clearer – no accidental writes.  
+  Streaming shows **phase labels** (“Thinking…”, “Using tool: read_file”).  
+  **models.dev** timeout + UI notice – no silent hangs.  
+  **Compass** usage visible in chat + milestone warnings (50%/25%/10% remaining).  
+  **Fullscreen** hit areas fixed, **New Chat** always visible, deep links for code preview.  
+  **Thoughts panel** replaces old activity stream – cleaner group-style logs.
 
-- **💬 Chat Tab When Panels Cover Screen**
-  When both panels are open and the chat 
-  area is hidden, a full Chat tab appears 
-  in the right panel — same session, 
-  same tools, compact model search.
+- **🗺️ Blueprint Canvas Fixes**  
+  Controls moved **outside** React Flow overlays – no missing click targets.  
+  Canvas loads with animation instead of static logo on cold start.
+
+- **🐧 Linux Build Finally Solid**  
+  Packaged `.deb` / `.rpm` now disable Chromium sandboxing (no more launch crashes).  
+  OAuth deep links work on cold start.  
+  PATH refresh for local models (Ollama/LM Studio) – no more “command not found”.
 
 ### Core Architecture: RTE + RAG
-```
 Traditional AI coding:
-  Ask question → scan codebase → 
-  100K tokens → slow, expensive, resets
 
-Atlarix v3.9:
-  Parse once → Blueprint graph cached → 
-  query relevant nodes → ~5K tokens
-  File watcher → incremental updates only
-```
+- Ask question → scan codebase →
+100K tokens → slow, expensive, resets
+
+- Atlarix v6.0:
+
+- Parse once → Blueprint graph cached →
+query relevant nodes → ~5K tokens
+File watcher → incremental updates only
+
+text
+
 **Parse Once. Query Forever.**
 
 ### Feature Highlights
+
 - **🗺 Blueprint Canvas** — React Flow 
   visual architecture designer. Design 
   containers, beacons, edges. Generate 
   ATLARIX_PLAN.md. AI implements task by 
   task with your review at each step.
 
-- **🤖 Four-Agent System** — Research, 
-  Architect, Builder, Reviewer. 
+- **🤖 Five-Agent System** — Research, 
+  Architect, Builder, Reviewer, Debugger. 
   Direct / Guided / Autonomous modes. 
   Ask (read-only) vs Build (write + execute) 
   permissions independent of mode.
@@ -97,7 +103,7 @@ Atlarix v3.9:
   Ollama, LM Studio. Your keys, your data, 
   your machine.
 
-- **🛠 59 Intelligent Tools** — File ops, 
+- **🛠 59+ Intelligent Tools** — File ops, 
   terminal execution, web search, semantic 
   code search, architecture diagrams, 
   DB queries, stream tools, scaffolding.
@@ -124,7 +130,9 @@ Atlarix v3.9:
   Send to AI. No tab switching.
 
 ### Currently Competing 🏆
-Entered in 1 hackathons simultaneously:
+
+Entered in 1 hackathon simultaneously:
+
 - **Amazon Nova AI Hackathon** — $40,000 pool
 
 ---
@@ -142,6 +150,7 @@ you bring any AI, including locally-built ones.
 
 We're actively integrating African-built models 
 as first-class providers:
+
 - **Awarri** (Nigeria) — N-ATLAS multilingual LLM
 - **Lelapa AI** (South Africa) — InkubaLM 
   in Swahili, Hausa, isiZulu, isiXhosa, Yoruba
@@ -150,39 +159,6 @@ as first-class providers:
 The goal: a developer in Nairobi opens Atlarix, 
 picks a locally-built model, and ships software. 
 No Western subscription required.
-
----
-
-## 🔭 Atlarix Roadmap
-
-### v3.x — PIVOT (In Progress)
-Full ANTLR4 parsing across TypeScript, Python, 
-Java, Go, Rust, C/C++. SQLite persistence for 
-the Blueprint graph. AI clustering into 
-containers. Live vs Blueprint comparison. 
-Generate code from architecture.
-
-### v4.0 — Atlarix Workforce (Planned)
-Taking Atlarix beyond the individual developer 
-into team and automation workflows:
-
-- **Slack Integration** — AI agent accessible 
-  directly from your team's Slack
-- **GitHub Actions Integration** — Atlarix 
-  agents as CI/CD steps
-- **File Revert** — Restore codebase to 
-  pre-exchange state on conversation revert
-- **Supabase Native Integration** — Auth, 
-  storage, realtime, edge functions as 
-  first-class Blueprint nodes
-- **Multi-Repo Workspace** — One Blueprint 
-  across your entire org's repos
-- **Team Memory** — Shared memory.md 
-  synced across team members via Git
-
-### Beyond v4.0
-Voice input · Timeline export · 
-Atlarix Vanguard · Enterprise SSO
 
 ---
 
