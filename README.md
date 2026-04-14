@@ -17,7 +17,9 @@ getting in the way.
 
 ## 🌌 Flagship Project: Atlarix
 **A Privacy-First, Native AI Coding Copilot**
-*v6.1.1 — Live & Apple Notarized ✅ | Linux Stable ✅*
+*v7.0.0 — Live & Apple Notarized ✅ | Linux Stable ✅*
+
+🏆 **Winner — Bonus Blog Post Prize, Devpost × Amazon Web Services Nova AI Hackathon**
 
 Atlarix is my current mission: a desktop-native 
 AI copilot built to give developers agentic 
@@ -30,50 +32,51 @@ real dev environment — autonomously.
 
 👉 https://atlarix.dev
 
-### What's New in v6.1.1
+### What's New in v7.0.0 — Project Vanguard
 
-- **🤖 Autonomous Mode**
-  Specialist agents run tools **without per-tool approval dialogs**.
-  You confirm scope once. After a run, you get a **summary of all changes** before anything commits.
-  Ask/Plan/Build restrictions still apply — safety first.
+- **🧠 Skills System**
+  Every agent (Architect, Builder, Reviewer, Debugger, Researcher) operates from a dedicated skill file. Override any skill per workspace in `.atlarix/skills/`.
 
-- **🔄 Workforce Session Scope**
-  Slack, Jira, GitHub etc. ask **per chat** which workspace you want.
-  Start a **New Chat** → context resets. No leftover permissions.
+- **📋 Task Ledger**
+  Tasks survive context resets. Agents always know what is done and what remains, regardless of session length.
 
-- **🧠 Two-Stage Auto Router**
-  Heuristics first. Low-confidence? A fast model classifies intent.
-  Activity stream suggests specialist delegation (e.g. "Delegate to Architect").
+- **⚡ Parallel Agents**
+  Research and Architect run simultaneously in Autonomous mode. Reviewer and Debugger verify after Builder completes automatically.
 
-- **🧭 Compass — Managed AI, No API Key**
-  Built-in Fast / Balanced / Thinking model tiers via OpenRouter.
-  Free users get Fast. Pro and Workforce unlock all three.
-  Zero setup. Zero user-facing API keys.
+- **🤝 Counsel**
+  Hard questions run Fast, Balanced, and Thinking models in parallel then synthesize. Works with every provider including local Ollama.
 
-- **🏢 Workforce Tier**
-  Connect Slack, Jira, Linear, GitHub, Sentry, Google Calendar via Auth0 Token Vault.
-  Teams up to 20 seats. Per-chat session scope.
+- **📸 Visual Git**
+  Every code change snapshots the architecture diagram at that moment. See how your system evolved. Stored in `.atlarix/` and travels with your repo.
 
-- **🐛 All DB, Diagram & Tool Call Issues Fixed**
-  SQLite migrations embedded in the main bundle at build time — no more runtime path failures.
-  Diagram column naming fixed for packaged builds. Tool calls stable across Mac and Linux.
+- **🌳 Tree-sitter RTE**
+  Blueprint now uses AST-level parsing for TypeScript, JavaScript, and Python. More accurate node/edge extraction with regex fallback.
 
-- **🐧 Linux — Fully Stable**
-  `.deb` / `.rpm` packaging, OAuth deep links, Ollama/LM Studio PATH resolution — all solid.
+- **🔁 Self-Correction**
+  TypeScript errors, dev server failures, and test failures trigger automatic fix attempts after each build.
+
+- **🪝 Hooks & Custom Commands**
+  Shell hooks around file writes and terminal commands. Custom `/commands` for repeatable workflows.
+
+- **📐 Per-Model Compaction**
+  Context compression uses each model's actual context window size dynamically.
 
 ### Core Architecture: RTE + RAG
+```
 Traditional AI coding:
 Ask question → scan codebase → 100K tokens → slow, expensive, resets
-Atlarix v6.1.1:
+
+Atlarix v7.0.0:
 Parse once → Blueprint graph cached →
 query relevant nodes → ~5K tokens
 File watcher → incremental updates only
+```
 **Parse Once. Query Forever.**
 
 ### Feature Highlights
 
 - **🗺 Blueprint Canvas** — React Flow visual architecture designer. Design containers, beacons, edges. Generate ATLARIX_PLAN.md. AI implements task by task with your review at each step.
-- **🤖 Five-Agent System** — Research, Architect, Builder, Reviewer, Debugger. Guided / Autonomous modes. Ask (read-only) vs Build (write + execute) independent of mode.
+- **🤖 Five-Agent System** — Research, Architect, Builder, Reviewer, Debugger. Guided / Autonomous modes. Each with a dedicated skill file.
 - **🔐 Privacy-First & BYOK** — OpenAI, Anthropic, Gemini, Groq, xAI, Mistral, Together AI, OpenRouter, AWS Bedrock, Ollama, LM Studio. Your keys, your data, your machine.
 - **🛠 59+ Intelligent Tools** — File ops, terminal, web search, semantic code search, DB queries, stream tools, scaffolding.
 - **🔄 Permission Queue** — AI proposes every change. You approve before anything runs.
@@ -81,6 +84,7 @@ File watcher → incremental updates only
 - **💰 Token Budget System** — Per-provider caps, real-time color-coded bar, warnings at 80% and 90%.
 - **🗄 DB Extension** — Full CRUD for PostgreSQL, MySQL, and SQLite.
 - **⚙️ GitHub Actions** — Pipeline runs, job logs, live streaming, Send to AI.
+- **🧭 Compass** — Managed AI, no API key. Fast / Balanced / Thinking tiers via OpenRouter.
 
 ---
 
@@ -94,12 +98,6 @@ subscription to a Western provider. That's
 not the reality for most developers on this 
 continent. Atlarix is open-model by design — 
 you bring any AI, including locally-built ones.
-
-Active pilot with **African Languages Lab** — exploring **MansaLLM** (40+ African languages) as a first-class native provider.
-
-We're also in conversations with:
-- **Awarri** (Nigeria) — N-ATLAS multilingual LLM
-- **Lelapa AI** (South Africa) — InkubaLM in Swahili, Hausa, isiZulu, isiXhosa, Yoruba
 
 The goal: a developer in Nairobi opens Atlarix, 
 picks a locally-built model, and ships software. 
