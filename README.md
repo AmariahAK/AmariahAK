@@ -12,7 +12,7 @@ AWS Certified Data Engineer · Google Cloud Professional Data Engineer · AWS Ce
 
 > A native desktop AI coding environment for developers who want real architectural understanding, not just autocomplete.
 
-**v7.0.2** · Mac + Linux · [atlarix.dev](https://atlarix.dev)
+**v7.0.4** · Mac + Linux · [atlarix.dev](https://atlarix.dev)
 
 Atlarix parses your codebase into a live Blueprint graph via Round-Trip Engineering, then uses that graph as RAG for every AI query — reducing token usage from ~100K to ~5K per query. v7 ships parallel agents (Research, Architect, Builder, Reviewer, Debugger), a task ledger that survives context resets, Tree-sitter AST parsing, visual git snapshots, and self-correction on build/test failures.
 
