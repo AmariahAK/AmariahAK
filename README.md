@@ -1,70 +1,57 @@
 # Amariah Kamau
 **AI Engineer · Full Stack Architect · Founder @ NorahLabs**
 
-Building production AI systems from Nairobi, Kenya. Agentic orchestration engines, RAG pipelines, and native desktop applications — designed for developers who want real architectural understanding without cloud lock-in.
+Building production AI systems from Nairobi, Kenya. Agentic orchestration engines, retrieval architecture, and native desktop applications — designed for developers who want real architectural understanding without cloud lock-in.
 
 ---
 
 ## Flagship: Atlarix
 
-> A native desktop AI coding environment for developers working on non-trivial codebases.
+> **The Open-Weight Frontier Harness** — the agent workstation built for open-weight frontier labs, where a weaker local model performs like it knows your codebase.
 
-**v8.7.5** · Mac + Linux · [atlarix.dev](https://atlarix.dev)
+**v13.6.0** · macOS / Linux / Windows · **396MB** (leaner than Cursor) · [atlarix.dev](https://atlarix.dev)
 
-Atlarix builds a section-scoped Blueprint graph on demand using a four-layer index stack — **Universal Ctags** (symbol index), **ast-grep** (import/call/HTTP route edges), **BM25** (semantic symbol ranking), and **ripgrep** (text fallback) — delivering ~6,500 tokens of structural understanding for a 99-file TypeScript section in a 25-section multi-repository workspace.
+Atlarix is built *for* the open-weight frontier labs — **DeepSeek, Qwen, Kimi, MiniMax** — not just compatible with them. The bet: durable open-weight labs, not specific model versions. What makes a weaker model punch above its weight is **Blueprint** — a section-scoped structural index (Universal Ctags symbol graph + ast-grep import/call/route edges + a disk-backed SQLite **FTS5** lexical layer) that hands the agent ~6,500 tokens of real structural understanding instead of a whole-repo dump. **No embeddings, no vector store** — structural + lexical retrieval, with the model as the natural-language layer. Any-model BYOK, local-first execution, every destructive action behind your approval.
 
-**Published research:** [Blueprint: Section-Scoped Structural Graph Retrieval and Post-Turn Compression for Agentic LLM Coding in Multi-Repository Workspaces](https://zenodo.org/records/20381860) · Zenodo (CERN), May 2026
+**Published research:** [Blueprint: Section-Scoped Structural Graph Retrieval and Post-Turn Compression for Agentic LLM Coding in Multi-Repository Workspaces](https://zenodo.org/records/20381860) · Zenodo (CERN), 2026
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20381860.svg)](https://doi.org/10.5281/zenodo.20381860)
 
-**v8.7.x highlights:**
-- Section-scoped `get_blueprint` — `focus_path` required; preflight path validation; richness-gated hybrid merge (ctags + ast-grep → hybrid when thin)
-- Blast radius BFS over Blueprint flow edges before every write/edit approval
-- Inline Mermaid diagrams generated on demand from codebase scan — no stale DB snapshot
-- Post-turn tool-result summarisation — 95–98% per-read compression before history persistence
+**What makes it different:**
+- **Built for open-weight, not retrofitted** — DeepSeek / Qwen / Kimi / MiniMax as first-class, plus broad BYOK (OpenAI, Anthropic, Gemini, OpenRouter, Groq, Together, Mistral, xAI, Hugging Face) and local Ollama / LM Studio.
+- **Blueprint, embedding-free** — Universal Ctags + ast-grep edges + SQLite FTS5, reranked by structural relevance (reciprocal-rank fusion, proximity scoring) at constant low memory for any repo size. `grep` returns the most relevant files first, each annotated with its enclosing symbol.
+- **Atlarix Core** — four managed open-weight models, **Core 1** (fastest) → **Core 4** (most capable); every plan can use every model, allowance differs by tier. No API key required on the free tier.
+- **Parallel sub-agents** — the `task` tool fans out up to five concurrent read-only scouts per turn, live thinking streamed per agent.
+- **Verified edits** — in Build / Debug the agent runs the project's *own* checks (`tsc`/`eslint`/`ruff`/`mypy`/`pytest`) through a sandboxed terminal and can't declare a task done while they fail.
+- **Per-OS security sandbox** — write-confining command execution, an approval queue with hunk-level diff accept/reject, committable permission + hook rules at a single execution funnel.
+- **Token-efficient by design** — on-demand tool-driven retrieval and model-triggered `compress_context`; provider-native tool blocks and prompt caching lift weak / local model performance.
+- **Real workspace** — interactive PTY terminal (persists across restarts), Monaco editor, in-app browser, `@` file/folder mentions scoped to the current workspace, per-workspace MCP.
 
-**v8.6.x highlights:**
-- Universal Ctags + ast-grep Blueprint stack — replaced previous parser approach
-- Route edges: Express/Fastify/Next.js HTTP handlers as first-class structural edges
-- ast-grep worker pool with Python/Go dynamic grammar registration
-- Incremental file-watcher refresh (500ms debounce) — per-file ctags + ast-grep, not full rebuild
+**Work modes:** Explore (read-only) · Plan · Build · Debug · Review (correctness + security)
 
-**v8.x foundations:**
-- ~50% pre-dispatch token reduction — 6 auto-injected blocks converted to tool-driven retrieval
-- `compress_context` — model-triggered, not pre-dispatch
-- Tool consolidation 60+ → 28 — unified `search` (auto/text/semantic-graph/structural), `edit_file`, on-demand MCP, Skills via ToolRegistry
-- Skills Marketplace — community registry at [atlarix-skills](https://github.com/AmariahAK/atlarix-skills)
+**Pricing:** Solo (free) · Studio ($19/mo) · Team ($79/mo)
 
-**v7.x foundations:**
-- Parallel agents: Research · Architect · Builder · Reviewer · Debugger · Explore
-- DelegationMonitor — cyclic and runaway delegation detection
-- Compass managed tier — Fast / Balanced / Thinking, no API key required
-- Full CI/CD: Apple Notarisation + Linux packaging (.deb / .rpm / .AppImage)
-- Three-tier subscription: Free · Pro ($19/mo) · Workforce ($79/mo)
-
-Multi-provider: OpenAI · Anthropic · Google Gemini · Groq · Mistral · xAI · OpenRouter · Together AI · Ollama · LM Studio
-
-**Achievements:** Winner — Amazon Nova AI Hackathon (Devpost × AWS, 2026) · GDG Nairobi Agentathon (May 2026) · Lua x Antler (Nairobi, 2026) · Red Bull Basement Global Innovation Programme
+**Achievements:** Winner — Amazon Nova AI Hackathon (Devpost × AWS, 2026) · GDG Nairobi Agentathon (2026) · Lua × Antler (Nairobi, 2026) · Red Bull Basement Global Innovation Programme
 
 ---
 
 ## Research
 
 **Blueprint: Section-Scoped Structural Graph Retrieval and Post-Turn Compression for Agentic LLM Coding in Multi-Repository Workspaces**
-Amariah Kamau, NorahLabs — May 2026
+Amariah Kamau, NorahLabs — 2026
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20381860.svg)](https://doi.org/10.5281/zenodo.20381860)
 
-Documents the Blueprint architecture, post-turn tool-result summarisation, and benchmark results from a controlled A/B evaluation on a production multi-repository workspace. Honest findings — including a counterintuitive result about total context usage.
+Documents the Blueprint architecture, post-turn tool-result summarisation, and benchmark results from a controlled A/B evaluation on a production multi-repository workspace — including a counterintuitive finding: structural confidence lets the agent explore *more*, using more total context but producing stronger results.
 
 ---
 
 ## Open Source
 
-**[atlarix-skills](https://github.com/AmariahAK/atlarix-skills)** — Community skill registry. SKILL.md files teaching agents language patterns and framework conventions across React, Next.js, Python, TypeScript, Go, Rust, Docker, MCP, and more. Apache 2.0.
+**[atlarix-skills](https://github.com/AmariahAK/atlarix-skills)** — Community Agent Behaviors registry. SKILL.md files teaching agents language patterns and framework conventions across React, Next.js, Python, TypeScript, Go, Rust, Docker, MCP, and more. Apache 2.0.
 
 **[atlarix-mcps](https://github.com/AmariahAK/atlarix-mcps)** — MCP server registry for Atlarix. One-click connections to Gmail, Calendar, Drive, and more from within the agent environment. Apache 2.0.
 
-**[atlarix-releases](https://github.com/AmariahAK/atlarix-releases)** — Desktop app release builds for Mac and Linux.
+**[atlarix-releases](https://github.com/AmariahAK/atlarix-releases)** — Desktop app release builds for macOS, Linux, and Windows.
 
 ---
 
@@ -73,8 +60,9 @@ Documents the Blueprint architecture, post-turn tool-result summarisation, and b
 | Layer | Technologies |
 | :--- | :--- |
 | **Languages** | TypeScript · Python · JavaScript · SQL · Bash |
-| **AI / ML** | Agentic Systems · RAG · Graph RAG · Multi-Agent Orchestration · Context Compression · Universal Ctags · ast-grep · BM25 · LangChain · Hugging Face |
-| **Desktop** | Electron · React · React Flow · SQLite |
+| **AI / ML** | Agentic Systems · RAG · Graph RAG · Multi-Agent Orchestration · Context Compression · Universal Ctags · ast-grep · BM25 · SQLite FTS5 · Hugging Face |
+| **Open-Weight Labs** | DeepSeek · Qwen · Kimi · MiniMax |
+| **Desktop** | Electron · React · React Flow · SQLite · Monaco |
 | **Backend** | Node.js · Django DRF · FastAPI · PostgreSQL · Redis · Celery |
 | **Infrastructure** | AWS · GCP · Docker · GitHub Actions · Supabase · Vercel |
 | **Auth & Billing** | Auth0 · Token Vault · LemonSqueezy |
@@ -84,7 +72,7 @@ Documents the Blueprint architecture, post-turn tool-result summarisation, and b
 
 ## Other Projects
 
-**[Praxia](https://github.com/AmariahAK/Praxia_Backend)** — AI healthcare assistant with MONAI X-ray analysis (pneumonia, fractures, tumours), multilingual symptom diagnosis, real-time WebSocket chat, and Docker/Nginx/Celery production stack.
+**[Praxia](https://github.com/AmariahAK/Praxia_Backend)** — AI healthcare assistant with MONAI X-ray analysis (pneumonia, fractures, tumours), multilingual symptom diagnosis, real-time WebSocket chat, and a Docker/Nginx/Celery production stack.
 
 **[Commit Checker](https://github.com/AmariahAK/commit-checker)** — Open source CLI for Git commit analysis.
 
@@ -92,7 +80,7 @@ Documents the Blueprint architecture, post-turn tool-result summarisation, and b
 
 ## African AI
 
-Atlarix is built in Nairobi. Most serious AI developer tooling assumes a Western cloud subscription. Atlarix is open-model by design — bring any provider, including locally-built African models. Currently piloting with African AI labs for native MansaLLM integration.
+Atlarix is built in Nairobi. Most serious AI developer tooling assumes a Western cloud subscription. Atlarix is open-weight by design — bring any provider, including locally-built African models. Exploring native MansaLLM integration with African AI labs.
 
 ---
 
