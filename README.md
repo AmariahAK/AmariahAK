@@ -26,9 +26,7 @@ Atlarix is a workstation you bring any AI model into — it uses AI, it doesn't 
 
 **Work modes:** Explore (read-only) · Plan · Build · Debug · Review (correctness + security)
 
-**As an open-source contributor,** I've landed quality work into major repos using Atlarix on open-weight models — including **Qwen Code** (credited in the release notes) and **Kilo Code**, a directly competing coding agent.
-
-**Selected:** GDG Nairobi Agentathon (2026) · Lua × Antler — Building Agent-First Businesses (Nairobi, 2026) · Red Bull Basement Global Innovation Programme
+**As an open-source contributor,** I've landed quality work into major repos using Atlarix on open-weight models — including **Qwen Code**, **Traefik**,**Apollo-Client**, **Crawlee** & **PDFDing** .
 
 ---
 
