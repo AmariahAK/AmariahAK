@@ -1,4 +1,4 @@
-# Amariah Kamau
+# Amariah Abishai
 **AI Engineer · Full Stack Architect · Founder @ NorahLabs**
 
 Building production AI systems from Nairobi, Kenya. Coding-agent harnesses, agentic orchestration, and native desktop applications — designed for developers who want serious AI tooling that runs on open-weight and local models, without cloud lock-in.
