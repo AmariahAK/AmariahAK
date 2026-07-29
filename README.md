@@ -1,45 +1,45 @@
 # Amariah Abishai
 **AI Engineer · Full Stack Architect · Founder @ NorahLabs**
 
-Building production AI systems from Nairobi, Kenya. Coding-agent harnesses, agentic orchestration, and native desktop applications — designed for developers who want serious AI tooling that runs on open-weight and local models, without cloud lock-in.
+Building production AI systems from Nairobi, Kenya. Coding-agent harnesses, agentic orchestration, and native desktop applications — serious AI tooling that runs on your own machine, on open-weight and local models, without cloud lock-in.
 
 ---
 
 ## Flagship: Atlarix
 
-> **The Open-Weight Frontier Harness** — the agent workstation built for open-weight frontier labs, where a weaker local model performs like it knows your codebase.
+> **The Private AI Workstation** — a native desktop workspace where you drive an AI to plan, build, review and test real projects, and a weaker local model performs like it knows your codebase.
 
 macOS / Linux / Windows · [atlarix.dev](https://atlarix.dev)
 
-Atlarix is built *for* the open-weight frontier labs — **DeepSeek, Qwen, Kimi, MiniMax** — not just compatible with them. The bet: durable open-weight labs, not specific model versions. What makes a weaker model punch above its weight isn't a bigger prompt — it's the **harness**. Enforced tool approvals, an OS-level execution sandbox, and verified edits mean the model's mistakes are caught by the system, not trusted on faith. Any-model BYOK, local-first execution, every destructive action behind your approval.
+Atlarix is a workstation you bring any AI model into — it uses AI, it doesn't make it. What makes a weaker model punch above its weight isn't a bigger prompt, it's the **harness**: enforced tool approvals, an OS-level execution sandbox, and verified edits mean the model's mistakes are caught by the system, not trusted on faith. Any-model BYOK, local-first execution, every destructive action behind your approval.
 
 **What makes it different:**
-- **Built for open-weight, not retrofitted** — DeepSeek / Qwen / Kimi / MiniMax as first-class, plus broad BYOK (OpenAI, Anthropic, Gemini, OpenRouter, Groq, Together, Mistral, xAI, Hugging Face) and local Ollama / LM Studio.
+- **The harness, not the model** — a weaker or local model performs reliably because the system enforces correctness, rather than hoping the model gets it right. Broad model support via BYOK (OpenAI, Anthropic, Gemini, OpenRouter, Groq, Together, Mistral, xAI, Hugging Face) plus local Ollama / LM Studio, and a managed tier for people who don't want to manage keys at all.
 - **Harness-managed agent control** — tool approvals, background commands, waits, and sub-agents are enforced by the harness, not the prompt, so a weaker model can't emit a premature completion or mismanage a wait.
 - **Verified edits** — in Build / Debug the agent runs the project's *own* checks (`tsc`/`eslint`/`ruff`/`mypy`/`pytest`) through a sandboxed terminal and can't declare a task done while they fail.
 - **OS-level execution sandbox** — per-OS write-confining command execution (Linux Landlock, Windows AppContainer, macOS Seatbelt), an approval queue with hunk-level diff accept/reject, a danger gate, and committable permission + hook rules at a single execution funnel.
 - **Fast search, no index** — bundled-ripgrep `grep` and `glob` over your workspace: no index to build, no background watcher, constant low memory at any repo size.
-- **Atlarix Core** — managed open-weight models with a pay-as-you-go credit wallet; no API key required, full BYOK / local on the free tier.
+- **Atlarix Core** — a managed tier with a pay-as-you-go credit wallet; no API key required, with a full BYOK / local free tier.
 - **Parallel sub-agents** — the `task` tool fans out up to five concurrent read-only scouts per turn, live thinking streamed per agent.
 - **Token-efficient by design** — on-demand tool-driven retrieval and model-triggered `compress_context`; provider-native tool blocks and prompt caching lift weak / local model performance.
-- **Real workspace** — interactive PTY terminal (persists across restarts), in-app browser, `@` file/folder mentions scoped to the current workspace, per-workspace MCP.
+- **Real workspace** — interactive PTY terminal (persists across restarts), in-app browser, `@` file/folder mentions scoped to the current workspace, per-workspace MCP, and any Agent Skill or MCP server dropped straight in.
 
 **Work modes:** Explore (read-only) · Plan · Build · Debug · Review (correctness + security)
 
-**As an open-source contributor,** I've landed quality work into major repos using Atlarix on open-weight models — including **Qwen Code** and **Kilo Code**, a directly competing coding agent.
+**As an open-source contributor,** I've landed quality work into major repos using Atlarix on open-weight models — including **Qwen Code** (credited in the release notes) and **Kilo Code**, a directly competing coding agent.
 
-**Achievements:** Winner — Amazon Nova AI Hackathon (Devpost × AWS, 2026) · GDG Nairobi Agentathon (2026) · Lua × Antler (Nairobi, 2026) · Red Bull Basement Global Innovation Programme
+**Selected:** GDG Nairobi Agentathon (2026) · Lua × Antler — Building Agent-First Businesses (Nairobi, 2026) · Red Bull Basement Global Innovation Programme
 
 ---
 
 ## Research
 
 **Blueprint: Section-Scoped Structural Graph Retrieval and Post-Turn Compression for Agentic LLM Coding in Multi-Repository Workspaces**
-Amariah Kamau, NorahLabs — 2026
+Amariah Abishai, NorahLabs — 2026 · *published research*
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20381860.svg)](https://doi.org/10.5281/zenodo.20381860)
 
-Documents the Blueprint architecture — a section-scoped structural index (Universal Ctags symbol graph + ast-grep edges + SQLite FTS5) that handed the agent structural understanding in ~6,500 tokens instead of a whole-repo dump — alongside post-turn tool-result summarisation and benchmark results from a controlled A/B evaluation on a production multi-repository workspace, including a counterintuitive finding: structural confidence lets the agent explore *more*, using more total context but producing stronger results.
+A peer-reviewed paper documenting the Blueprint architecture — a section-scoped structural index (Universal Ctags symbol graph + ast-grep edges + SQLite FTS5) that handed the agent structural understanding in ~6,500 tokens instead of a whole-repo dump — alongside post-turn tool-result summarisation and results from a controlled A/B evaluation on a production multi-repository workspace, including a counterintuitive finding: structural confidence lets the agent explore *more*, using more total context but producing stronger results. Blueprint was a research effort; Atlarix's current retrieval takes a different, lexical approach.
 
 ---
 
@@ -58,8 +58,7 @@ Documents the Blueprint architecture — a section-scoped structural index (Univ
 | Layer | Technologies |
 | :--- | :--- |
 | **Languages** | TypeScript · Python · JavaScript · SQL · Bash |
-| **AI / ML** | Agentic Systems · Coding-Agent Harness Design · Multi-Agent Orchestration · Lexical Retrieval (ripgrep / BM25 / FTS5) · Context Compression · MCP · Hugging Face |
-| **Open-Weight Labs** | DeepSeek · Qwen · Kimi · MiniMax |
+| **AI / ML** | Agentic Systems · Coding-Agent Harness Design · Multi-Agent Orchestration · Lexical Retrieval (ripgrep / BM25 / FTS5) · Context Compression · MCP · Open-Weight & Local Model Integration · Hugging Face |
 | **Desktop** | Electron · React · React Flow · SQLite |
 | **Backend** | Node.js · Django DRF · FastAPI · PostgreSQL · Redis · Celery |
 | **Infrastructure** | AWS · GCP · Docker · GitHub Actions · Supabase · Vercel |
@@ -86,9 +85,8 @@ Documents the Blueprint architecture — a section-scoped structural index (Univ
 
 ## Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/amariah-kamau-3156412a6/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/amariah-abishai-3156412a6/)
 [![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:amariah.abish@gmail.com)
 [![Atlarix](https://img.shields.io/badge/Atlarix-2563EB?style=flat&logoColor=white)](https://atlarix.dev)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20381860.svg)](https://doi.org/10.5281/zenodo.20381860)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/amariahak)
-</file_text>
