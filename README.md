@@ -1,32 +1,36 @@
 # Amariah Abishai
 **AI Engineer · Full Stack Architect · Founder @ NorahLabs**
 
-Building production AI systems from Nairobi, Kenya. Coding-agent harnesses, agentic orchestration, and native desktop applications — serious AI tooling that runs on your own machine, on open-weight and local models, without cloud lock-in.
+Building production AI systems from Nairobi, Kenya. Coding-agent harnesses, agentic orchestration, and native desktop applications — serious AI tooling that runs on your own machine, on any model you bring, without cloud lock-in.
 
 ---
 
 ## Flagship: Atlarix
 
-> **The Private AI Workstation** — a native desktop workspace where you drive an AI to plan, build, review and test real projects, and a weaker local model performs like it knows your codebase.
+> **The Private AI Workstation for engineering teams** — a native desktop workspace where your team drives an AI to plan, build, review, debug and test real projects. It keeps notes on your codebase and gets sharper on your system the longer you use it.
 
 macOS / Linux / Windows · [atlarix.dev](https://atlarix.dev)
 
-Atlarix is a workstation you bring any AI model into — it uses AI, it doesn't make it. What makes a weaker model punch above its weight isn't a bigger prompt, it's the **harness**: enforced tool approvals, an OS-level execution sandbox, and verified edits mean the model's mistakes are caught by the system, not trusted on faith. Any-model BYOK, local-first execution, every destructive action behind your approval.
+Atlarix is a workstation you bring any AI model into — it uses AI, it doesn't make it. What lets a weaker or local model punch above its weight isn't a bigger prompt, it's the **harness**: enforced tool approvals, an OS-level execution sandbox, and verified edits mean the model's mistakes are caught by the system, not trusted on faith. Any-model BYOK, local-first execution, every destructive action behind your approval — and your code never leaves the machine.
 
 **What makes it different:**
 - **The harness, not the model** — a weaker or local model performs reliably because the system enforces correctness, rather than hoping the model gets it right. Broad model support via BYOK (OpenAI, Anthropic, Gemini, OpenRouter, Groq, Together, Mistral, xAI, Hugging Face) plus local Ollama / LM Studio, and a managed tier for people who don't want to manage keys at all.
 - **Harness-managed agent control** — tool approvals, background commands, waits, and sub-agents are enforced by the harness, not the prompt, so a weaker model can't emit a premature completion or mismanage a wait.
-- **Verified edits** — in Build / Debug the agent runs the project's *own* checks (`tsc`/`eslint`/`ruff`/`mypy`/`pytest`) through a sandboxed terminal and can't declare a task done while they fail.
-- **OS-level execution sandbox** — per-OS write-confining command execution (Linux Landlock, Windows AppContainer, macOS Seatbelt), an approval queue with hunk-level diff accept/reject, a danger gate, and committable permission + hook rules at a single execution funnel.
+- **Verified edits** — in Build / Debug the agent runs the project's *own* checks (`tsc`/`eslint`/`ruff`/`mypy`/`pytest`) through a sandboxed terminal and can't declare a task done while they fail. A command that exits non-zero, or an edit that didn't land on disk, goes back to the agent — not to you.
+- **OS-level execution sandbox** — per-OS write-confining command execution (Linux Landlock, Windows AppContainer, macOS Seatbelt), an approval queue with hunk-level diff accept/reject, a danger gate, and committable permission + hook rules at a single execution funnel. It can't reach past the project you opened.
 - **Fast search, no index** — bundled-ripgrep `grep` and `glob` over your workspace: no index to build, no background watcher, constant low memory at any repo size.
-- **Atlarix Core** — a managed tier with a pay-as-you-go credit wallet; no API key required, with a full BYOK / local free tier.
+- **Atlarix Core** — a managed tier with a pay-as-you-go credit wallet; no API key required. The app itself is free, with a full BYOK / local tier.
 - **Parallel sub-agents** — the `task` tool fans out up to five concurrent read-only scouts per turn, live thinking streamed per agent.
 - **Token-efficient by design** — on-demand tool-driven retrieval and model-triggered `compress_context`; provider-native tool blocks and prompt caching lift weak / local model performance.
-- **Real workspace** — interactive PTY terminal (persists across restarts), in-app browser, `@` file/folder mentions scoped to the current workspace, per-workspace MCP, and any Agent Skill or MCP server dropped straight in.
+- **Real workspace** — interactive PTY terminal (persists across restarts), in-app browser it drives, `@` file/folder mentions scoped to the current workspace, per-workspace MCP, and any Agent Skill or MCP server dropped straight in.
+- **In the tools your team already uses** — connectors for GitHub, Slack, Jira, Linear, and Notion.
+- **Automations** — put it on a schedule or a trigger (fix failing builds on every push, a weekly dependency review); it runs, then reports back.
 
 **Work modes:** Explore (read-only) · Plan · Build · Debug · Review (correctness + security)
 
-**As an open-source contributor,** I've landed quality work into major repos using Atlarix on open-weight models — including **Qwen Code**, **Traefik**,**Apollo-Client**, **Crawlee** & **PDFDing** .
+**Atlarix Reviewer** — reads the pull requests on repositories you choose and posts its findings as a review (file, line, what's wrong, and the fix). It never writes to your code and never runs it. Included with Atlarix Pro, unlimited repositories and pull requests.
+
+**As an open-source contributor,** I've landed production code into major repositories using Atlarix on open-weight and local models — including **[Remix](https://github.com/remix-run/remix/pull/11591)** (merged by its co-creator), **[Caddy](https://github.com/caddyserver/caddy/pull/7910)**, **[Traefik](https://github.com/traefik/traefik/pull/13476)**, **[Valkey](https://github.com/valkey-io/valkey/pull/4341)**, **[TanStack Query](https://github.com/TanStack/query/pull/11036)**, **[Apollo Client](https://github.com/apollographql/apollo-client/pull/13329)**, **[Crawlee](https://github.com/apify/crawlee/pull/3831)**, and **[vim](https://github.com/vim/vim/commit/a20071113aa9bec2d47924e6af0269b6e1929ac5)**. Each is a public, verifiable merge — the code is AI-assisted (the agent appears as a commit co-author) and reviewed and merged by the projects' own maintainers.
 
 ---
 
@@ -83,8 +87,8 @@ A peer-reviewed paper documenting the Blueprint architecture — a section-scope
 
 ## Connect
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/amariah-abishai-3156412a6/)
-[![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:amariah.abish@gmail.com)
 [![Atlarix](https://img.shields.io/badge/Atlarix-2563EB?style=flat&logoColor=white)](https://atlarix.dev)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/amariah-abishai-3156412a6/)
+[![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:amariah@atlarix.dev)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20381860.svg)](https://doi.org/10.5281/zenodo.20381860)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=flat&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/amariahak)
