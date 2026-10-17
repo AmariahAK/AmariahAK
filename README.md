@@ -1,40 +1,44 @@
 # Amariah Abishai
 **AI Engineer · Full Stack Architect · Founder @ NorahLabs**
 
-Building production AI systems from Nairobi, Kenya. Coding-agent harnesses, agentic orchestration, and native desktop applications — serious AI tooling that runs on your own machine, on any model you bring, without cloud lock-in.
+Self-taught engineer from Nairobi, Kenya, building production AI systems: coding-agent harnesses, agentic orchestration, and tooling that runs on your own machine, on any model you bring, without cloud lock-in.
 
 ---
 
 ## Flagship: Atlarix
 
-> **The private AI workstation: desktop, browser, and PR review.** A native desktop workspace where your team drives an AI to plan, build, review, debug and test real projects, a Chrome extension that brings the same agent into your own browser, and a reviewer for your pull requests. It keeps notes on your codebase and gets sharper on your system the longer you use it.
+> **The private AI workstation: desktop, browser, and PR review.** One agent your team drives to plan, build, review, debug and test real projects, in the app, the terminal, your editor, your browser, and on your pull requests. It keeps notes on your codebase and gets sharper on your system the longer you use it.
 
-macOS / Linux / Windows · Chrome · GitHub · [atlarix.dev](https://atlarix.dev)
+macOS / Linux / Windows · Terminal · VS Code · Zed · JetBrains · Chrome · GitHub · Slack · [atlarix.dev](https://atlarix.dev)
 
-Atlarix is a workstation you bring any AI model into — it uses AI, it doesn't make it. What lets a weaker or local model punch above its weight isn't a bigger prompt, it's the **harness**: enforced tool approvals, an OS-level execution sandbox, and verified edits mean the model's mistakes are caught by the system, not trusted on faith. Any-model BYOK, local-first execution, and every change behind your approval. Run a local model and your code never leaves the machine.
+Atlarix is a workstation you bring any AI model into. It uses AI; it doesn't make it. What lets a weaker or local model punch above its weight isn't a bigger prompt, it's the **harness**: enforced tool approvals, an OS-level execution sandbox, and verified edits mean the model's mistakes are caught by the system, not trusted on faith. Run a local model and your code never leaves the machine.
 
-**Three surfaces, one product:**
+**One product, every surface:**
 - **Desktop app** — the full workstation: plan, build, debug, review and test with a real terminal, a sandbox, and hunk-by-hunk approval.
-- **Chrome extension** — the same agent in the browser you're already signed into: it reads pages, works across tabs, fills forms (never submits without asking), and hands the desktop agent your real session when a task needs your logins.
-- **Atlarix Reviewer** — a GitHub App that reads the pull requests on repositories you choose and posts its findings as a review (file, line, what's wrong, and the fix). It never writes to your code and never runs it.
+- **Terminal** — the same agent as a CLI: `curl -fsSL https://atlarix.dev/install | sh`, `brew install amariahak/atlarix/atlarix`, or `npm i -g atlarix`.
+- **Your editor** — an extension for VS Code, Cursor, Kiro, Windsurf and VSCodium, and an [Agent Client Protocol](https://agentclientprotocol.com) agent for Zed and JetBrains (`atlarix acp`).
+- **Chrome extension** — the agent in the browser you're already signed into: it reads pages, works across tabs, fills forms (never submits without asking), and hands your real session to the other surfaces when a task needs your logins.
+- **Atlarix Reviewer** — a GitHub App that reviews pull requests on repositories you choose and posts findings as a review (file, line, what's wrong, and the fix). It never writes to your code and never runs it.
+- **Slack and the cloud agent** — hand Atlarix a task from a conversation, or let it work in your own GitHub Actions.
+
+Sessions talk to each other, so a task started in the terminal can hand off to the app or the browser.
 
 **What makes it different:**
-- **The harness, not the model** — a weaker or local model performs reliably because the system enforces correctness, rather than hoping the model gets it right. Bring your own key across 220+ providers, run local models through Ollama or LM Studio, or use Atlarix Auto and skip keys entirely.
-- **Atlarix Auto** — picks the right model for each step of the work (exploring, building, planning, reviewing, reading a screenshot or PDF) instead of running a whole session on one model. Free in the desktop app with a daily allowance; private on Pro or credit.
-- **Harness-managed agent control** — tool approvals, background commands, waits, and sub-agents are enforced by the harness, not the prompt, so a weaker model can't emit a premature completion or mismanage a wait.
-- **Verified edits** — in Build / Debug the agent runs the project's *own* checks (`tsc`/`eslint`/`ruff`/`mypy`/`pytest`) through a sandboxed terminal and can't declare a task done while they fail. A command that exits non-zero, or an edit that didn't land on disk, goes back to the agent — not to you.
-- **OS-level execution sandbox** — per-OS write-confining command execution (Linux Landlock, Windows AppContainer, macOS Seatbelt), an approval queue with hunk-level diff accept/reject, a danger gate, and committable permission + hook rules at a single execution funnel. It can't reach past the project you opened.
-- **Fast search, no index** — bundled-ripgrep `grep` and `glob` over your workspace: no index to build, no embeddings, no background watcher, constant low memory at any repo size.
-- **Parallel sub-agents** — up to five workers per turn: read-only scouts and architects, plus implementers whose edits come back as proposals for the main agent to review.
-- **Long sessions that hold up** — one compaction system that summarises before it deletes anything, plus `session_search` so the agent can look back through the full transcript instead of asking you to repeat yourself.
-- **Real workspace** — interactive PTY terminal (persists across restarts), a browser the agent drives for testing your app, `@` file/folder mentions scoped to the current workspace, and any MCP server or Agent Skill dropped straight in.
+- **The harness, not the model** — a weaker or local model performs reliably because the system enforces correctness. Bring your own key across 220+ providers and 6,500+ tool-capable models, run local models through Ollama or LM Studio, or use Atlarix Auto and skip keys entirely.
+- **Atlarix Auto** — picks the right model for each step (exploring, building, planning, reviewing, reading a screenshot or PDF) instead of running a whole session on one model. Free with a daily allowance in the app, the terminal and your editor; private on Pro or credit.
+- **42,000+ MCP servers** — the marketplace is the official MCP Registry, searched live, with verified one-click connectors on top. Any Agent Skill drops straight in.
+- **Verified edits** — in Build / Debug the agent runs the project's *own* checks (`tsc`/`eslint`/`ruff`/`mypy`/`pytest`) through a sandboxed terminal and can't declare a task done while they fail.
+- **OS-level execution sandbox** — per-OS write-confining command execution (Linux Landlock, Windows AppContainer, macOS Seatbelt), hunk-level diff approval, a danger gate, and committable permission rules at a single execution funnel. It can't reach past the project you opened.
+- **Fast search, no index** — bundled-ripgrep `grep` and `glob`: no index to build, no embeddings, no background watcher, constant low memory at any repo size.
+- **Parallel sub-agents** — up to five workers per turn: read-only scouts plus implementers whose edits come back as proposals for the main agent to review.
+- **Long sessions that hold up** — compaction that summarises before it deletes anything, plus `session_search` so the agent can look back through the full transcript.
 - **Automations** — put it on a schedule or an MCP trigger (a nightly test run, a weekly dependency review); it runs, then reports back.
 
 **Work modes:** Explore (read-only) · Plan · Build · Debug · Review (correctness + security)
 
-**Pricing:** the app is free, with every feature. Free Atlarix Auto on the desktop, your own keys and local models cost nothing. **Pro ($19/month)** adds Atlarix Reviewer and included managed inference across all three surfaces.
+**Pricing:** the app is free, with every feature, on every surface. Free Atlarix Auto, your own keys and local models cost nothing. **Pro ($19/month)** adds Atlarix Reviewer and included managed inference, from one shared balance.
 
-**As an open-source contributor,** I've landed production code into major repositories using Atlarix on open-weight and local models — including **[Remix](https://github.com/remix-run/remix/pull/11591)** (merged by its co-creator), **[Caddy](https://github.com/caddyserver/caddy/pull/7910)**, **[Traefik](https://github.com/traefik/traefik/pull/13476)**, **[Valkey](https://github.com/valkey-io/valkey/pull/4341)**, **[TanStack Query](https://github.com/TanStack/query/pull/11036)**, **[Apollo Client](https://github.com/apollographql/apollo-client/pull/13329)**, **[Crawlee](https://github.com/apify/crawlee/pull/3831)**, and **[vim](https://github.com/vim/vim/commit/a20071113aa9bec2d47924e6af0269b6e1929ac5)**. Each is a public, verifiable merge — the code is AI-assisted (the agent appears as a commit co-author) and reviewed and merged by the projects' own maintainers.
+**As an open-source contributor,** I've landed production code into major repositories using Atlarix across a range of models, mostly open-weight: **[Remix](https://github.com/remix-run/remix/pull/11591)** (merged by its co-creator), **[Caddy](https://github.com/caddyserver/caddy/pull/7910)** (merged by its creator), **[Traefik](https://github.com/traefik/traefik/pull/13476)**, **[pnpm](https://github.com/pnpm/pnpm/pull/13215)**, **[Valkey](https://github.com/valkey-io/valkey/pull/4341)**, **[TanStack Query](https://github.com/TanStack/query/pull/11036)**, **[Apollo Client](https://github.com/apollographql/apollo-client/pull/13329)**, **[Crawlee](https://github.com/apify/crawlee/pull/3831)**, and **[vim](https://github.com/vim/vim/commit/a20071113aa9bec2d47924e6af0269b6e1929ac5)**, plus documentation merged into **[AWS CDK](https://github.com/aws/aws-cdk/pull/38461)** and **[Sentry](https://github.com/getsentry/sentry-docs/pull/19055)**. Each is a public, verifiable merge: AI use is disclosed in the commits, and every change was reviewed and merged by the project's own maintainers.
 
 ---
 
@@ -53,9 +57,9 @@ A peer-reviewed paper documenting the Blueprint architecture — a section-scope
 
 **[atlarix-skills](https://github.com/AmariahAK/atlarix-skills)** — Community Agent Behaviors registry. SKILL.md files teaching agents language patterns and framework conventions across React, Next.js, Python, TypeScript, Go, Rust, Docker, MCP, and more. Apache 2.0.
 
-**[atlarix-mcps](https://github.com/AmariahAK/atlarix-mcps)** — MCP server registry for Atlarix. Connections to Gmail, Calendar, Drive, and more from within the agent environment. Apache 2.0.
-
 **[atlarix-releases](https://github.com/AmariahAK/atlarix-releases)** — Desktop app release builds for macOS, Linux, and Windows.
+
+**[atlarix-mcps](https://github.com/AmariahAK/atlarix-mcps)** — *Archived.* The original MCP server index for Atlarix; the marketplace now runs on the official MCP Registry. Apache 2.0.
 
 ---
 
@@ -64,10 +68,10 @@ A peer-reviewed paper documenting the Blueprint architecture — a section-scope
 | Layer | Technologies |
 | :--- | :--- |
 | **Languages** | TypeScript · Python · JavaScript · SQL · Bash |
-| **AI / ML** | Agentic Systems · Coding-Agent Harness Design · Multi-Agent Orchestration · Model Routing · Lexical Retrieval (ripgrep / BM25 / FTS5) · Context Compression · MCP · Open-Weight & Local Model Integration · Hugging Face |
-| **Desktop & Browser** | Electron · React · Chrome Extensions (MV3, CDP) · SQLite |
+| **AI / ML** | Agentic Systems · Coding-Agent Harness Design · Multi-Agent Orchestration · Model Routing · Lexical Retrieval (ripgrep / BM25 / FTS5) · Context Compression · MCP · Agent Client Protocol · Open-Weight & Local Model Integration · Hugging Face |
+| **Desktop, Terminal & Browser** | Electron · React · Node CLI / TUI · VS Code Extensions · Chrome Extensions (MV3, CDP) · SQLite |
 | **Backend** | Node.js · Django DRF · FastAPI · PostgreSQL · Redis · Celery |
-| **Infrastructure** | AWS · GCP · Docker · GitHub Actions · GitHub Apps · Supabase · Vercel |
+| **Infrastructure** | AWS · GCP · Docker · GitHub Actions · GitHub Apps · Slack Apps · Supabase · Vercel |
 | **Auth & Billing** | Supabase Auth · LemonSqueezy |
 | **Monitoring** | Sentry · PostHog · Prometheus · Grafana |
 
